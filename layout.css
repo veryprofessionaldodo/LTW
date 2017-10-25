@@ -1,0 +1,7 @@
+body {
+	background-color: #64ad8a;
+}
+
+body > header > h1 {
+	text-color:#d1f8e5;
+}
