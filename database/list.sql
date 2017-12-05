@@ -2,6 +2,7 @@
 
 DROP TABLE IF EXISTS list;
 DROP TABLE IF EXISTS category;
+DROP TABLE IF EXISTS items;
 
 CREATE TABLE list(
   Id INTEGER NOT NULL PRIMARY KEY,
@@ -18,9 +19,14 @@ CREATE TABLE items(
   Content TEXT NOT NULL,
   Data DATE NOT NULL,
   Completed INTEGER DEFAULT 0,
-  FOREIGN KEY (Id) REFERENCES list(Id),
+  FOREIGN KEY (Id) REFERENCES list(Id)
 );
 
 CREATE TABLE category(
   Title TEXT PRIMARY KEY
 );
+
+insert into category (Title) values ("LTW");
+
+insert into list (Id, Title, Data, Category, Email) values (1, "LTW", "2017-10-10", "LTW", "rogmatias7@gmail.com");
+
