@@ -1,8 +1,8 @@
 <?php
-  function isLoginCorrect($username, $password) {
+  function isLoginCorrect($Name, $Password) {
     global $dbh;
-    $stmt = $dbh->prepare('SELECT * FROM user WHERE usr_username = ? AND usr_password = ?');
-    $stmt->execute(array($username, sha1($password)));
+    $stmt = $dbh->prepare('SELECT * FROM user WHERE Name = ? AND Password = ?');
+    $stmt->execute(array($Name, sha1($Password)));
     return $stmt->fetch() !== false;
   }
 
