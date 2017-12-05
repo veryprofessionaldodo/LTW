@@ -1,149 +1,92 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin:0;
+}
 
 
 body {
 	background-color: #E8EEE8;
 	background-position: center;
 	background-size: center;
-    background-repeat: no-repeat;
 
-	margin-top:1em;
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
+  display: grid;
+
+
+  grid-template-columns: [start] 1fr [side_bar] 3fr [end];
+  grid-template-rows: [start] 0.5fr [search_bar] 6fr [end];
 }
 
-#mainTitle {
-	margin-left: auto; 
-	margin-right: auto;
-	width: 800px;
-	margin-top: 4rem;
-	font-size: 3.6em;
-	border-style: solid;
-    border-width: 4px 7px 4px 7px;
-    border-radius: 5px;
-    border-color: #ececec;
-	font-family: fontawesome, sans-serif;  
-	color: #ececec;
+#sidebar {
+  font-family: sans-serif;
+  color: #E1EEE4;
+
+  background-color: #435B52;
+
+  -webkit-box-shadow: 10px 0px 39px -35px rgba(15,23,11,1);
+  -moz-box-shadow: 10px 0px 39px -35px rgba(15,23,11,1);
+  box-shadow: 10px 0px 39px -35px rgba(15,23,11,1);
+
+  grid-row-start: start;
+  grid-row-end: end;
+  grid-column-start: start;
+  grid-column-end: side_bar;
+
 }
 
-#loginTab, #signupTab {
-	-webkit-transition: 0.3s;
-	transition: 0.3s;
-	display: none;
-	padding: 20px 0 0;
+#sidebar > h1 {
+  background-color: #264635;
+  padding: 2.8rem 0rem;
+  font-size: 2.4em;
+  margin: 0;
+  text-align: center;
+  font-weight: lighter;
+  border-style: solid;
+  border-width: 0px 0px 0px 0px;
+  border-top-color: #5C8C73;
+  border-bottom-color: #19261F;
 }
 
-body > div {
-	margin: auto;
+
+#mainTasksTabs > input, #projectsTabs > input {
+  display: none;
 }
 
-body > input {
-	display: none;
-	background-color: #298a54;
+#mainTasksTabs > h2, #projectsTabs > h2 {
+  font-weight: lighter;
+  text-align: center; 
+
+  border-width: 2px 0px 2px 0px;
+  border-top-color: #649382;
+  border-bottom-color: #283E36;
+
+  border-style: solid;
+
+  background-color: #518072;
+  font-size:1.5em;
+
+  padding: 1rem;
+  margin: 0 0;
+  margin-bottom: 1.5rem;
+
 }
 
-body > label {
-	margin-left: auto;
-	margin-right: auto;
-	display: inline-block;
- 	padding: 10px 25px;
-  	font-weight: 600;
-  	text-align: center;
-  	color: #ececec;
-  	border: 1px solid transparent;
-  	font-family: fontawesome, sans-serif;  
+#projectsTabs > h2 {
+  margin-top:3rem;
 }
 
-body > label {
-    color: #3eb171;
-    background-color: #298a54;
+#mainTasksTabs > label, #projectsTabs > label {
+  font-style: italic;
+  font-weight: lighter;
+  padding: 0 1rem;
+  font-size: 1.3em;
+  text-align: left;
+  display: block;
+  margin-left: 4rem;
+  margin-top: 1rem;
 }
 
-input:checked + label {
-    color: #6cffac;
-    background-color: #135731;
-    border-top: 2px solid #97ffc4;
-    border-bottom: 2px solid #26794a;
-}
 
-#tab1:checked ~ #loginTab,
-#tab2:checked ~ #signupTab {
-    display: block;
-}
-
-input[type=text] {
-	background-color: #298a54;
-   	width: 500px;
-    padding: 12px 20px;
-    margin: 8px auto;
-    box-sizing: border-box;
-    border: 2px solid #77ca99;
-    outline: none;  
-	color: #b2d8c3;
-	text-align: center;
-	-webkit-transition: 0.3s;
-    transition: 0.3s;
-    
-}
-
-input[type=submit] {
-	background-color: #298a54;
-   	width: 100px;
-    padding: 6px 10px;
-    margin: 8px auto;
-    box-sizing: border-box;
-    border: 2px solid #77ca99;
-    outline: none;  
-	color: #b2d8c3;
-	text-align: center;
-	-webkit-transition: 0.3s;
-    transition: 0.3s;
-}
-
-input[type=text]:hover {
-	border: 2px solid #d1f7e1;
-	background-color: #216840;
-    color: #dbefe4;
-}
-
-input[type=text]:focus {
-	border: 2px solid #e3fced;
-	background-color: #184f30;
-	box-shadow: 0 0px 8px 4px rgba(0, 0, 0, 0.05), 0 0px 30px 2px rgba(0, 0, 0, 0.05);
-    color: #eafff3;
-}
-
-input[type=submit]:hover {
-	border: 2px solid #d1f7e1;
-	background-color: #216840;
-    box-shadow: 0 0px 8px 2px rgba(0, 0, 0, 0.2), 0 0px 20px 0 rgba(0, 0, 0, 0.19);
-    color: #dbefe4;
-}
-
-input[type=submit]:focus {
-	border: 2px solid #e3fced;
-	background-color: #184f30;
-    color: #eafff3;
-}
-
-#tab1:checked ~ #loginTab + input[type=text]:focus  {
-    border: 3px solid #555;
-}
-
-body > div > form {
-	color: #bbb;
-	display: block;
-}
-
-body > div > form > input {
-	margin-right: auto;
-	margin-left: auto;
-	display: block;	
-}
-
-body > header > h1 {
-	text-color:#d1f8e5;
-}
 
 
 /* Change placeholder properties */
