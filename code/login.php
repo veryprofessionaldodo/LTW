@@ -15,18 +15,18 @@
   	<label for="tab2">Signup</label>
 
   	<div id="loginTab">
-		<form action="code/action_login.php">
-			<input type="text" name="Email" placeholder="Write your E-Mail here..." value=""><br>
-			<input type="text" name="Password" placeholder="... And here your password!" value=""><br>
+		<form action="code/action_login.php" method="post">
+			<input type="text" name="Email" placeholder="Write your E-Mail here..." value="" required="required"><br>
+			<input type="text" name="Password" placeholder="... And here your password!" value="" required="required"><br>
 		<input type="submit" value="Submit">
 		</form>
 	</div>
 
 	<div id="signupTab">
 		<form action="code/register.php" method="post">
-			<input type="text" name="Name" placeholder="What's your name?" value=""><br>
-			<input type="text" name="Email" placeholder="Here goes your E-Mail..." value=""><br>
-			<input type="text" name="Password" placeholder="...and here you can write your password!" value=""><br>
+			<input type="text" name="Name" placeholder="What's your name?" value="" required="required"><br>
+			<input type="text" name="Email" placeholder="Here goes your E-Mail..." value="" required="required"><br>
+			<input type="text" name="Password" placeholder="...and here you can write your password!" value="" required="required"><br>
 		<input type="submit" value="Submit">
 		</form>
 	</div>
