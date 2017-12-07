@@ -33,17 +33,18 @@ CREATE TABLE category(
   Color TEXT NOT NULL
 );
 
-insert into user (Name, Email, Password) values ("rogmat7", "rogmatias7@gmail.com","Portugal");
-insert into user (Name, Email, Password) values ("test", "test@gmail.com","Portugal");
-insert into user (Name, Email, Password)values ("jofermatos", "joanaferreiramatos@gmail.com","Portugal");
-insert into user (Name, Email, Password) values ("Ricugh", "Rich_hugh87@hotmail.com","Portugal");
-insert into user (Name, Email, Password) values ("Allen", "raymfallen@gmail.com","Portugal");
-insert into user (Name, Email, Password) values ("Bruninho", "brunosantos656@gmail.com","Portugal");
-insert into user (Name, Email, Password) values ("Katie", "kateofmidletonsfamily@gmail.com","Portugal");
-insert into user (Name, Email, Password) values ("Augustinus","augconstanzo@gmail.com","Portugal");
-insert into user (Name, Email, Password) values ("Sean9", "seancconner1990@gmail.com","Portugal");
-insert into user (Name, Email, Password) values ("Didier", "didiersamlloris@hotmail.com","Portugal");
-insert into user (Name, Email, Password) values ("Alberto","albertoogarcia99@hotmail.com","Portugal");
+insert into user (Name, Email, Password) values ("rogmat7", "rogmatias7@gmail.com","test");
+insert into user (Name, Email, Password) values ("test", "test@gmail.com","test");
+insert into user (Name, Email, Password)values ("jofermatos", "joanaferreiramatos@gmail.com","test");
+insert into user (Name, Email, Password) values ("Ricugh", "Rich_hugh87@hotmail.com","test");
+insert into user (Name, Email, Password) values ("Allen", "raymfallen@gmail.com","test");
+insert into user (Name, Email, Password) values ("Bruninho", "brunosantos656@gmail.com","test");
+insert into user (Name, Email, Password) values ("Katie", "kateofmidletonsfamily@gmail.com","test");
+insert into user (Name, Email, Password) values ("Augustinus","augconstanzo@gmail.com","test");
+insert into user (Name, Email, Password) values ("Sean9", "seancconner1990@gmail.com","test");
+insert into user (Name, Email, Password) values ("Didier", "didiersamlloris@hotmail.com","test");
+insert into user (Name, Email, Password) values ("Alberto","albertoogarcia99@hotmail.com","test");
+insert into user (Name, Email, Password) values ("test","teste@gmail.com","test");
 
 insert into category (Title,Color) values ("LTW","Blue");
 

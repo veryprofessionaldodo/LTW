@@ -6,9 +6,9 @@ html, body {
 
 
 body {
-	background-color: #E8EEE8;
-	background-position: center;
-	background-size: center;
+  background-color: #E8EEE8;
+  background-position: center;
+  background-size: center;
 
   display: grid;
 
@@ -91,19 +91,19 @@ body {
 
 /* Change placeholder properties */
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-   	color: #b2d8c3;
+    color: #b2d8c3;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-	color: #b2d8c3;
+  color: #b2d8c3;
     opacity:  1;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
- 	color: #b2d8c3;
+  color: #b2d8c3;
     opacity:  1;
 }
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-   	color: #b2d8c3;
+    color: #b2d8c3;
 }
 ::-ms-input-placeholder { /* Microsoft Edge */
-   	color: #b2d8c3;
+    color: #b2d8c3;
 }
