@@ -1,15 +1,15 @@
-<?php
-  include_once('../database/connection.php');
-  include_once('../database/user.php');
 
+<?php
+  include_once('../database/user.php');
+  include_once('../database/connection.php');
 
   if (isLoginCorrect($_POST['Email'], $_POST['Password'])) {
-    //setCurrentUser(getUsername($_POST['email']));
-    include_once('main_page.php');
+    //setCurrentUser($_POST['username']);
     $_SESSION['success_messages'][] = "Login Successful!";
+    include_once('main_page.php');
   } else {
     $_SESSION['error_messages'][] = "Login Failed!";
+    include_once('main_page.php');
   }
 
-  header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>
