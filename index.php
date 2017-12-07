@@ -1,4 +1,4 @@
 <?php
-  session_start();  
+  session_start();
   include ('code/login.php');
 ?>

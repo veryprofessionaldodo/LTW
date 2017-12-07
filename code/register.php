@@ -5,15 +5,14 @@
   //echo $_POST["name"];
   //echo $_POST["Email"];
   //echo $_POST["Password"];
-function register($Name,$Email,$Password){
-	include_once('connection.php');
+	include_once('../database/connection.php');
+register($_POST['Name'],$_POST['Email'],$_POST['Password']);
 
-  	global $db;
-	$stmt = $db->prepare('INSERT INTO user VALUES ($Name,$Email,$Password)');
-  	$stmt->execute(array(Name, Email, Password));
-  	echo $_POST[Name];
-  echo $_POST[Email];
-  echo $_POST[Password];
+function register($name,$email,$password){
+
+  	global $dbh;
+	$stmt = $dbh->prepare('INSERT INTO user (Name,Email,Password) VALUES (?,?,?)');
+	  	$stmt->execute(array($name, $email, $password));
 }
 
 
