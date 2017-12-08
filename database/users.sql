@@ -49,5 +49,16 @@ insert into user (Name, Email, Password) values ("test","teste@gmail.com","test"
 insert into category (Title,Color) values ("LTW","Blue");
 
 insert into list (Id, Title, Data, Category, Email) values (1, "LTW", "2017-10-10", "LTW", "rogmatias7@gmail.com");
+insert into list (Id, Title, Data, Category, Email) values (2, "Reduzir niveis de roleplay por 45% até ao fim do trimestre", "2017-10-10", "LTW", "rogmatias7@gmail.com");
+insert into list (Id, Title, Data, Category, Email) values (3, "Git gud at rocket league", "2017-10-10", "LTW", "rogmatias7@gmail.com");
+insert into list (Id, Title, Data, Category, Email) values (4, "Ver se isto de facto funciona, por isso texto grande aqui wowowo", "2017-10-10", "LTW", "rogmatias7@gmail.com");
+insert into list (Id, Title, Data, Category, Email) values (5, "Tentar nao chorar por isto estar feio ", "2017-10-10", "LTW", "rogmatias7@gmail.com");
+insert into list (Id, Title, Data, Category, Email) values (6, "Espera ai, rcom é para a semana?", "2017-10-10", "LTW", "rogmatias7@gmail.com");
+insert into list (Id, Title, Data, Category, Email) values (7, "Acho que vou pedir um descanso ao reitor", "2017-10-10", "LTW", "rogmatias7@gmail.com");
+insert into list (Id, Title, Data, Category, Email) values (8, "Quero dormir pls", "2017-10-10", "LTW", "rogmatias7@gmail.com");  
+insert into list (Id, Title, Data, Category, Email) values (9, "Raposa do artico, escuto", "2017-10-10", "LTW", "rogmatias7@gmail.com");
+insert into list (Id, Title, Data, Category, Email) values (10, "Apetece me partir um Linux", "2017-10-10", "LTW", "rogmatias7@gmail.com");
+
 
 insert into items (Id, Content, Data, Completed) values (1, "LTW","2017-10-10",1);
+
