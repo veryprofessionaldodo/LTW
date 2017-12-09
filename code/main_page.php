@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="../css/main_page.css" rel="stylesheet">
+	<script src="scripts.js" async></script> 
 </head>
 <body>
 	<div id="sidebar">
@@ -30,15 +31,18 @@
 	<div id="topBar">
 
 	</div>
+
 	<div id="mainArea">
   		<?php foreach ($tasks as $task) { ?>
-    		<div class="task">
+    		<div class="task" id="<?=$task['Id']?>">
 		      	<h2><?=$task['Title']?></h2>
             	<p class="date"><?=$task['Data']?></p>
       			<p class="category"><?=$task['Category']?></p>
-      			<input id="taskTabButton" type="radio" name="taskTab" checked>
+      			<input id="taskTabButton" type="radio" name="taskTabelect" onclick="selectFunction(<?=$task['Id']?>)"></button>
     		</div>
   		<?php } ?>
 	</div>
+
+	
 </body>
 </html>

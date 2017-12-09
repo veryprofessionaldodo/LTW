@@ -98,16 +98,16 @@ body {
   border-style: solid;
 
   background-color: #264635;
-
 }
 
 #mainArea {
-  
+  overflow: scroll;
 }
 
 .task {
   display: grid;
   grid-template-columns: [start_main] 6fr [radio_button] 0.5fr [end_main];
+  overflow: hidden;
 
   font-family: sans-serif;
 
@@ -116,7 +116,6 @@ body {
   border-width: 0px 0px 3px 0px;
   border-color: #19261D;
   border-style: solid;
-
 }
 
 .task > h2{
@@ -138,7 +137,15 @@ body {
   display: none;
 }
 
+.task > input:hover {
+  display: grid;
+  border: 2px solid #d1f7e1;
+  background-color: #216840;
+    color: #dbefe4;
+}
+
 .task > input {
+  display: nonẽ;
   grid-column-start: radio_button;
   grid-column-end: end;
 }

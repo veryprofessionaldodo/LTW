@@ -6,14 +6,13 @@
   //echo $_POST["Email"];
   //echo $_POST["Password"];
 	include_once('../database/connection.php');
-register($_POST['Name'],$_POST['Email'],$_POST['Password']);
+  register($_POST['Name'],$_POST['Email'],$_POST['Password']);
 
-function register($name,$email,$password){
-
-  	global $dbh;
-	$stmt = $dbh->prepare('INSERT INTO user (Name,Email,Password) VALUES (?,?,?)');
-	  	$stmt->execute(array($name, $email, $password));
-}
+  function register($name,$email,$password){
+    global $dbh;
+  	$stmt = $dbh->prepare('INSERT INTO user (Name,Email,Password) VALUES (?,?,?)');
+  	$stmt->execute(array($name, $email, $password));
+  }
 
 
 ?>
