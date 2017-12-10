@@ -103,14 +103,10 @@ body {
   overflow: scroll;
 }
 
-ol {
-  margin: 0;
-  padding: 0;
-}
 
 .task {
   display: grid;
-  grid-template-columns: [start_main] 6fr [radio_button] 0.5fr [end_main];
+  grid-template-columns: [start_main] 20fr [add_button] 0.1fr [delete_button] 0.1fr [radio_button] 2fr [end_main];
   overflow: hidden;
 
   grid-column-start: start_main;
@@ -130,7 +126,7 @@ ol {
 
   padding-left: 2rem;
   grid-column-start: start_main;
-  grid-column-end: radio_button;
+  grid-column-end: add_button;
 
   float:left;
   font-size: 1.3em;
@@ -146,22 +142,43 @@ ol {
   display: none;
 }
 
-.task > input:hover {
-  display: grid;
-  border: 2px solid #d1f7e1;
-  background-color: #216840;
-    color: #dbefe4;
+.task > img {
+  width: 30px;
+}
+
+#addNewItemImage {
+  width: 40px;
+  grid-column-start: add_button;
+  grid-column-end: delete_button;
+}
+
+#popupItem {
+  visibility: hidden;
+}
+
+.task > .addNewItem {
+  display: flex;
+  grid-column-start: add_button;
+  grid-column-end: delete_button;
 }
 
 .task > input {
-  display: nonẽ;
   grid-column-start: radio_button;
   grid-column-end: end;
 }
 
+ol {
+  margin: 0;
+  padding: 0;
+  grid-template-columns: [start_main] 6fr [add_item_button] 0.5fr [delete_item_button] 0.5fr [radio_button] 0.5fr [end_main];
+  grid-column-start: start_main;
+  grid-column-end: end_main;
+}
+
 .item {
-  display: grid;
-  grid-template-columns: [start_main] 6fr [radio_button] 0.5fr [end_main];
+  display: flex;
+  grid-column-start: start_main;
+  grid-column-end: end_main;
 
   background-color: #65876c;
 
@@ -170,14 +187,14 @@ ol {
   margin: 0;
   padding: 0;
 
-  border-width: 2px 0px 0px 0px;
+  border-width: 2px 1px 0px 2px;
   border-color: #19261D;
   border-style: solid;
 }
 
 .item > h2 {
   grid-column-start: start_main;
-  grid-column-end: radio_button;
+  grid-column-end: add_item_button;
 
   color: white;
 
@@ -188,9 +205,10 @@ ol {
   text-align: left;
 }
 
-.item > input {
+#itemTabButton {
+
   grid-column-start: radio_button;
-  grid-column-end: end;
+  grid-column-end: end_main;
 }
 
 .item > .completed, .item > .itemDate {
@@ -205,19 +223,9 @@ ol {
     z-index: 1;
     bottom: 10%;
     left: 50%;
-}
-
-
-/* Toggle this class - hide and show the popup */
-#popup .show{
-    visibility: visible;
-    margin: 10rem;
-    position: absolute;
-    z-index: 1;
-    bottom: 10%;
-    left: 50%;
     background-color: #FFF;
 }
+
 
 /* Container */
 .addNew > img {
