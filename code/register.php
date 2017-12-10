@@ -10,8 +10,9 @@
 
   function register($name,$email,$password){
     global $dbh;
+    $hashed = password_hash($password, PASSWORD_DEFAULT);
   	$stmt = $dbh->prepare('INSERT INTO user (Name,Email,Password) VALUES (?,?,?)');
-  	$stmt->execute(array($name, $email, $password));
+  	$stmt->execute(array($name, $email, $hashed));
   }
 
 
