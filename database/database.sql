@@ -26,7 +26,7 @@ CREATE TABLE items(
   Content TEXT NOT NULL,
   Data DATE NOT NULL,
   Completed INTEGER DEFAULT 0,
-  FOREIGN KEY (Id) REFERENCES list(Id)
+  FOREIGN KEY (ItemId) REFERENCES list(Id)
 );
 
 CREATE TABLE category(
