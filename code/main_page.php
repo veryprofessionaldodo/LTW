@@ -12,24 +12,27 @@
 
 	<div id="mainArea">
   		<?php foreach ($tasks as $task) { ?>
-    		<div class="task" id="<?=$task['Id']?>">
+    		<div class="task" id="list<?=$task['Id']?>">
 		      	<h2><?=$task['Title']?></h2>
             	<p class="date"><?=$task['Data']?></p>
       			<p class="category"><?=$task['Category']?></p>
+      		
       			<input id="taskTabButton" type="radio" name="taskTabSelect" onclick="selectFunctionList(<?=$task['Id']?>)"></input>
       			<ol>
 	      			<?php 
 		      			global $dbh;
-		      			$itemId = $task['Id'];
-		      			$query = "SELECT * FROM items WHERE IdList=$itemId";
+		      			$currentTask = $task['Id'];
+		      			$query = "SELECT * FROM items WHERE IdList=$currentTask";
 		      			$result = $dbh->query($query);
 
 		      			foreach ($result as $item) { ?>
-		    				<ul class="item" id="<?=$item['Id']?>">
+		      			<script type="text/javascript">
+		      			</script>
+		    				<ul class="item" id="item<?=$item['ItemId']?>">
 						      	<h2><?=$item['Content']?></h2>
 		        	    		<p class="itemDate"><?=$item['Data']?></p>
 		      					<p class="completed"><?=$item['Completed']?></p>
-		      					<input id="itemTabButton" type="radio" name="itemTabSbelect" onclick="selectFunctionItem(<?=$item['Id']?>)"></input>
+		      					<input id="itemTabButton" type="radio" name="itemTabSbelect" onclick="selectFunctionItem(<?=$item['ItemId']?>)"></input>
 				    		</ul>
 		  			<?php } ?>
 	  			</ol>
