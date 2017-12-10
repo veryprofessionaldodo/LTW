@@ -85,7 +85,6 @@ body {
   margin-top: 1rem;
 }
 
-
 #topBar {
   grid-column-start: side_bar;
   grid-column-end: end;
@@ -104,14 +103,23 @@ body {
   overflow: scroll;
 }
 
+ol {
+  margin: 0;
+  padding: 0;
+}
+
 .task {
   display: grid;
   grid-template-columns: [start_main] 6fr [radio_button] 0.5fr [end_main];
   overflow: hidden;
 
+  grid-column-start: start_main;
+  grid-column-end: end_main;
+
   font-family: sans-serif;
 
-  padding-left: 2rem;
+  padding-bottom: 0;
+  margin-bottom: 0;
 
   border-width: 0px 0px 3px 0px;
   border-color: #19261D;
@@ -120,6 +128,7 @@ body {
 
 .task > h2{
 
+  padding-left: 2rem;
   grid-column-start: start_main;
   grid-column-end: radio_button;
 
@@ -148,6 +157,74 @@ body {
   display: nonẽ;
   grid-column-start: radio_button;
   grid-column-end: end;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: [start_main] 6fr [radio_button] 0.5fr [end_main];
+
+  background-color: #65876c;
+
+  width:100%;
+
+  margin: 0;
+  padding: 0;
+
+  border-width: 2px 0px 0px 0px;
+  border-color: #19261D;
+  border-style: solid;
+}
+
+.item > h2 {
+  grid-column-start: start_main;
+  grid-column-end: radio_button;
+
+  color: white;
+
+  padding-left: 3rem;
+  float:left;
+  font-size: 1em;
+  font-weight: lighter;
+  text-align: left;
+}
+
+.item > input {
+  grid-column-start: radio_button;
+  grid-column-end: end;
+}
+
+.item > .completed, .item > .itemDate {
+  display: none;
+}
+
+
+/* The actual popup */
+#popup {
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    bottom: 10%;
+    left: 50%;
+}
+
+
+/* Toggle this class - hide and show the popup */
+#popup .show{
+    visibility: visible;
+    margin: 10rem;
+    position: absolute;
+    z-index: 1;
+    bottom: 10%;
+    left: 50%;
+    background-color: #FFF;
+}
+
+/* Container */
+.addNew > img {
+  width: 70px;
+  position: absolute;
+  right: 5%;
+  bottom: 7%;  
 }
 
 

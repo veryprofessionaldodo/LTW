@@ -1,4 +1,4 @@
-async function selectFunction(id) {
+async function selectFunctionList(id) {
 	//let menu = document.getElementById('id');
 	let article = document.getElementById(id);
 
@@ -36,6 +36,27 @@ async function selectFunction(id) {
     $stmt = $dbh->prepare("DELETE FROM list WHERE Id = id");
 	$stmt->execute();
   	return $stmt->fetchAll(); */
+}
+
+async function selectFunctionItem(id) {
+    //let menu = document.getElementById('id');
+    let item = document.getElementById(id);
+
+    item.style.transition = "all 0.5s"; 
+    item.style.backgroundColor = "#7ecc83";                  // changes the text color to blue
+    
+    await sleep(1000);
+
+    item.style.maxHeight = "2rem";
+    item.style.transition ="maxHeight 0.15s ease-out";
+    item.style.maxHeight = "0";
+
+    item.remove();
+}
+
+function addNewTask() {
+    var popup = document.getElementById("popup");
+    popup.classList.toggle("show");
 }
 
 function sleep(ms) {

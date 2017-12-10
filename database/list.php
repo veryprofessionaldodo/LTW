@@ -20,7 +20,7 @@
   function getItemsByDate(){
     global $dbh;
     $stmt = $dbh->prepare("SELECT *
-      FROM list WHERE data<=date() 
+      FROM items WHERE data<=date() 
       ORDER BY Id ");
     $stmt->execute();
     return $stmt->fetchAll();

@@ -59,6 +59,5 @@ insert into list (Id, Title, Data, Category, Email) values (8, "Quero dormir pls
 insert into list (Id, Title, Data, Category, Email) values (9, "Raposa do artico, escuto", "2017-10-10", "LTW", "rogmatias7@gmail.com");
 insert into list (Id, Title, Data, Category, Email) values (10, "Apetece me partir um Linux", "2017-10-10", "LTW", "rogmatias7@gmail.com");
 
-
 insert into items (Id, Content, Data, Completed) values (1, "LTW","2017-10-10",1);
 
