@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="../css/main_page.css" rel="stylesheet">
-	<script src="scripts.js" async></script> 
+	<script src="scripts.js" async></script>
 </head>
 <body>
 
@@ -18,7 +18,7 @@
       			<p class="category"><?=$task['Category']?></p>
       			<input id="taskTabButton" type="radio" name="taskTabSelect" onclick="selectFunctionList(<?=$task['Id']?>)"></input>
       			<ol>
-	      			<?php 
+	      			<?php
 		      			global $dbh;
 		      			$itemId = $task['Id'];
 		      			$query = "SELECT * FROM items WHERE IdList=$itemId";
@@ -40,7 +40,7 @@
 
 	</div>
 	<div id="sidebar">
-		<h1 id = "sidebarTitle">List Checkers</h1>	
+		<h1 id = "sidebarTitle">List Checkers</h1>
 
 		<div id="mainTasksTabs">
 			<h2>Main Tasks</h2>
@@ -67,6 +67,12 @@
 			<input type="date" id="data">
 			<input type="text" id="category">
 		</div>
+	</div>
+
+	<div class="editProfile">
+		<form action="editProfile.php">
+			<input type="submit" value="Edit Profile" />
+		</form>
 	</div>
 
 </body>

@@ -7,10 +7,11 @@
   if (isLoginCorrect($_POST['Email'], $_POST['Password'])) {
     //setCurrentUser($_POST['username']);
     echo($_POST['Email']);
+    $_SESSION['Email'] = $_POST['Email'];
     $_SESSION['success_messages'][] = "Login Successful!";
     include_once('database/list.php');
 
-    session_start();  
+    session_start();
     $tasks = getListsByDate();
     $items = getItemsByDate();
     include ('main_page.php');
