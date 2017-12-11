@@ -1,6 +1,6 @@
 async function selectFunctionList(id) {
 	//let menu = document.getElementById('id');
-	let article = document.getElementById(id);
+	let article = document.getElementById("list"+id);
 
 	article.style.transition = "all 0.5s"; 
 	article.style.backgroundColor = "#7ecc83";                  // changes the text color to blue
@@ -40,7 +40,7 @@ async function selectFunctionList(id) {
 
 async function selectFunctionItem(id) {
     //let menu = document.getElementById('id');
-    let item = document.getElementById(id);
+    let item = document.getElementById("item"+id);
 
     item.style.transition = "all 0.5s"; 
     item.style.backgroundColor = "#7ecc83";                  // changes the text color to blue
@@ -56,9 +56,34 @@ async function selectFunctionItem(id) {
 
 function addNewTask() {
     var popup = document.getElementById("popup");
-    popup.classList.toggle("show");
+    popup.style.visibility="visible";
+}
+
+function clearPopup() {
+    var popup = document.getElementById("popup");
+    popup.style.visibility="hidden";   
+}
+
+function addNewItem() {
+    var popup = document.getElementById("popupItem");
+    popup.style.visibility="visible";
+}
+
+function clearPopupItem() {
+    var popup = document.getElementById("popupItem");
+    popup.style.visibility="hidden";   
 }
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function addListToDatabase(title, date, category) {
+    var popup = document.getElementById("popup");
+    popup.style.visibility="hidden";   
+}
+
+function addItemToDatabase(id, date, content) {
+    var popup = document.getElementById("popup");
+    popup.style.visibility="hidden";      
 }
