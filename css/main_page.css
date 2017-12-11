@@ -225,23 +225,57 @@ ol {
 }
 
 
-#topBar > img {
+#settingSvg {
   width: 20px;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 15px;
+  right: 20px;
+}
+
+#logoutIcon {
+  width: 20px;
+  position: absolute;
+  top: 15px;
+  right: 55px; 
 }
 
 /* The actual popup */
-#popup {
+#popup, #popupItem {
+    padding: 2rem;
+    padding-top: 1rem;
     visibility: hidden;
     position: absolute;
     z-index: 1;
-    bottom: 10%;
+    bottom: 30%;
     left: 50%;
-    background-color: #FFF;
+    background-color: #29382c;
+  
+    display: grid;
+    
+    border-width: 2px 2px 2px 2px;
+    border-color: #dce5de;
+    border-style: solid;
 }
 
+#popup > label, #popupItem > label {
+  padding: 0.5rem;
+  font-family: sans-serif;
+  color: #cce5d1;
+  text-align: center;
+}
+
+#popup > button, #popupItem > label {
+  width: 40%;
+  padding-top: 1rem;
+  margin: auto;
+}
+
+#closeNewListImage, #closeNewItemImage {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  width: 5%;
+}
 
 /* Container */
 .addNew > img {

@@ -19,30 +19,10 @@ async function selectFunctionList(id) {
 	request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 	request.send(encodeForAjax({id:id}));
 
+}
 
-	//get the input value
-    /*$.ajax({
-        //the url to send the data to
-        url: "modules/tca/updatedb.php",
-        //the data to send to
-        data: {id : $id, lang: $lang},
-        //type. for eg: GET, POST
-        type: "POST",
-        //on success
-        success: function(data){
-            console.log("***********Success***************"); //You can remove here
-            console.log(data); //You can remove here
-        },
-        //on error
-        error: function(){
-            console.log("***********Error***************"); //You can remove here
-            console.log(data); //You can remove here
-        }
-
-	/*global $dbh;
-    $stmt = $dbh->prepare("DELETE FROM list WHERE Id = id");
-	$stmt->execute();
-  	return $stmt->fetchAll(); */
+function working(){
+    alert(this.responseText);
 }
 
 async function selectFunctionItem(id) {
@@ -59,6 +39,12 @@ async function selectFunctionItem(id) {
     item.style.maxHeight = "0";
 
     item.remove();
+
+    var request = new XMLHttpRequest();
+    //request.addEventListener('load', working);
+    request.open('POST', 'delete_item.php', true);
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    request.send(encodeForAjax({id:id}));
 }
 
 function encodeForAjax(data) {
@@ -104,9 +90,28 @@ function sleep(ms) {
 function addListToDatabase(title, date, category) {
     var popup = document.getElementById("popup");
     popup.style.visibility="hidden";
+
+        var request = new XMLHttpRequest();
+        request.addEventListener('load', working);
+        request.open('POST', 'add_list.php', true);
+        request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        request.send(encodeForAjax({title:title,date:date,category:category}));
+        window.location.reload(true);
+
 }
 
 function addItemToDatabase(id, date, content) {
-    var popup = document.getElementById("popup");
+    var popup = document.getElementById("popupItem");
     popup.style.visibility="hidden";
+
+        var request = new XMLHttpRequest();
+        request.addEventListener('load', working);
+        request.open('POST', 'add_item.php', true);
+        request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        request.send(encodeForAjax({id:id,date:date,content:content}));
+        window.location.reload(true);
+}
+
+function logout() {
+    // Ele entra aqui, tenho a certeza
 }

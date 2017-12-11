@@ -16,17 +16,18 @@
       			<p class="category"><?=$task['Category']?></p>
 
 				<div class="addNewItem">
-					<img src="../images/addNewItem.svg" id="addNewItemImage" onclick="addNewTask()"></img>
+					<img src="../images/addNewItem.svg" id="addNewItemImage" onclick="addNewItem()"></img>
 					<div id="popupItem">
+						<label for="dataNewItem"> Date </label>
 						<input type="date" id="dataNewItem">
+						<label for="contentNewItem"> Title </label>
 						<input type="text" id="contentNewItem">
-						<button onclick="addItemToDatabase(<?=$task['Id']?>, dataNewItem.value, contentNewItem.value)"></button>
-						<a class="close" onclick="clearPopupItem()" href="#">&times;</a>
-
+						<label for="submitItem"> Submit </label>
+						<button id="submitItem" onclick="addItemToDatabase(<?=$task['Id']?>, dataNewItem.value, contentNewItem.value)"></button>
+						<img src="../images/close.png" id="closeNewItemImage"  onclick="clearPopupItem()"></img>
 					</div>
 				</div>
 				<input id="taskTabButton" type="radio" name="taskTabSelect" onclick="selectFunctionList(<?=$task['Id']?>)"></input>
-
       			<ol>
 	      			<?php
 		      			global $dbh;
@@ -54,11 +55,15 @@
 	<div class="addNew">
 		<img src="../images/addNewButton.svg" id="addNewButton" onclick="addNewTask()"></img>
 		<div id="popup">
+			<label for="titleNewList"> Title </label>
 			<input type="text" id="titleNewList">
+			<label for="dataNewList"> Date </label>
 			<input type="date" id="dataNewList">
+			<label for="categoryNewList"> Category </label>
 			<input type="text" id="categoryNewList">
-			<button onclick="addListToDatabase(titleNewList.value, dataNewList.value, categoryNewList.value)"></button>
-			<a class="close" onclick="clearPopup()" href="#">&times;</a>
+			<label for="submitList"> Submit </label>
+			<button id="submitList" onclick="addListToDatabase(titleNewList.value, dataNewList.value, categoryNewList.value)"></button>
+			<img src="../images/close.png" id="closeNewListImage" onclick="clearPopup()"></img>
 		</div>
 	</div>
 
@@ -82,19 +87,11 @@
 		</div>
 	</div>
 
-	<div class="addNew">
-		<img src="../images/addNewButton.svg" id="addNewButton" onclick="addNewTask()"></img>
-		<div id="popup">
-			<input type="text" id="title">
-			<input type="date" id="data">
-			<input type="text" id="category">
-		</div>
-	</div>
 
 	<div id="topBar">
 			<img src="../images/settings.svg" id="settingSvg" onclick="editProfile()"></img>
+			<img src="../images/logout.png" id="logoutIcon" onclick="logout()"></img>
 	</div>
-
 
 	<div id="editProfile">
 		<div class="editPassword">
