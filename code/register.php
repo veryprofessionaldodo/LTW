@@ -14,11 +14,11 @@ session_start();
   function register($name,$email,$password){
 		try{
     global $dbh;
-    $hashed = password_hash($password, PASSWORD_DEFAULT);
+    //$hashed = password_hash($password, PASSWORD_DEFAULT);
   	$stmt = $dbh->prepare('INSERT INTO user (Name,Email,Password) VALUES (:name,:email,:password)');
 		$stmt->bindParam(":name",$name);
 		$stmt->bindParam(":email",$email);
-		$stmt->bindParam(":password",$hashed);
+		$stmt->bindParam(":password",sha1($password));
   	$stmt->execute();
 	}
 	catch(PDOException $e){

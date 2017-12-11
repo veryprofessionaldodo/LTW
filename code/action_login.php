@@ -8,8 +8,7 @@
   if (isLoginCorrect($_POST['Email'], $_POST['Password'])) {
     $_SESSION['Email'] = $_POST['Email'];
     $_SESSION['success_messages'][] = "Login Successful!";
-    include_once('database/list.php');
-
+    include_once('../database/list.php');
 
     $tasks = getListsByDate();
     $items = getItemsByDate();
