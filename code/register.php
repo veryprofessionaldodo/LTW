@@ -6,8 +6,8 @@ session_start();
 	If(register($_POST['Name'],$_POST['Email'],$_POST['Password'])){
 		$_SESSION['success_messages'][] = "Login Successful!";
 		include_once('../database/list.php');
-		$tasks = getListsByDate();
-		$items = getItemsByDate();
+		$tasks = getListsByDate($email);
+		$items = getItemsByDate($email);
 		include ('main_page.php');
 	}
 
