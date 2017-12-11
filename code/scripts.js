@@ -91,12 +91,12 @@ function addListToDatabase(title, date, category) {
     var popup = document.getElementById("popup");
     popup.style.visibility="hidden";
 
-        var request = new XMLHttpRequest();
-        //request.addEventListener('load', working);
-        request.open('POST', 'add_list.php', true);
-        request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        request.send(encodeForAjax({title:title,date:date,category:category}));
-        window.location.reload(true);
+    var request = new XMLHttpRequest();
+    //request.addEventListener('load', working);
+    request.open('POST', 'add_list.php', true);
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    request.send(encodeForAjax({title:title,date:date,category:category}));
+    window.location.reload(true);
 
 }
 
@@ -104,12 +104,12 @@ function addItemToDatabase(id, date, content) {
     var popup = document.getElementById("popupItem");
     popup.style.visibility="hidden";
 
-        var request = new XMLHttpRequest();
-        request.addEventListener('load', working);
-        request.open('POST', 'add_item.php', true);
-        request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        request.send(encodeForAjax({id:id,date:date,content:content}));
-        window.location.reload(true);
+    var request = new XMLHttpRequest();
+    request.addEventListener('load', working);
+    request.open('POST', 'add_item.php', true);
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    request.send(encodeForAjax({id:id,date:date,content:content}));
+    window.location.reload(true);
 }
 
 function logout() {

@@ -16,8 +16,8 @@
 	    //$hashed = password_hash($password, PASSWORD_DEFAULT);
 			if(mailDoesntExists($email)) {
 				$stmt = $dbh->prepare('INSERT INTO user (Name,Email,Password) VALUES (?, ?, ?)');
-				$stmt->execute(array($name, $email, $password));
-	#	
+				$stmt->execute(array($name, $email, sha1($password)));
+	#
 			}
 		#catch(PDOException $e){
 		#	return false;
