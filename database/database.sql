@@ -1,4 +1,4 @@
-﻿.nullvalue NULL
+
 DROP TABLE IF EXISTS user;
 DROP TABLE IF EXISTS list;
 DROP TABLE IF EXISTS category;
@@ -26,7 +26,7 @@ CREATE TABLE items(
   Content TEXT NOT NULL,
   Data DATE NOT NULL,
   Completed INTEGER DEFAULT 0,
-  FOREIGN KEY (ItemId) REFERENCES list(Id)
+  FOREIGN KEY (IdList) REFERENCES list(Id)
 );
 
 CREATE TABLE category(
@@ -40,6 +40,7 @@ insert into user (Name, Email, Password)values ("jofermatos", "joanaferreiramato
 insert into user (Name, Email, Password) values ("Ricugh", "Rich_hugh87@hotmail.com","$2y$10$Q2MsinyBvVfEXDUB32NFFOPrs.rzfIHPtpkGTsic/nTg8GZvBX1p2");
 
 insert into category (Title,Color) values ("LTW","Blue");
+insert into category (Title,Color) values ("Masfgh","Blue");
 
 insert into list (Id, Title, Data, Category, Email) values (1, "LTW", "2017-10-10", "LTW", "rogmatias7@gmail.com");
 insert into list (Id, Title, Data, Category, Email) values (2, "Reduzir niveis de roleplay por 45% até ao fim do trimestre", "2017-10-10", "LTW", "rogmatias7@gmail.com");

@@ -31,4 +31,17 @@
     return $stmt->fetchAll();
   }
 
+  function deleteList($id){
+    global $dbh;
+    $cenas=$dbh->prepare("SELECT MAX(ItemId) FROM items WHERE IdList=?");
+    $cenas->execute(array($id));
+    for ($i=1; $i < $cenas->fetch() ; $i++) {
+    removeItem($i);
+    }
+    $stmt = $dbh->prepare('DELETE FROM list WHERE id = ?');
+    return $stmt->execute(array($id));
+    }
+
+
+
 ?>
