@@ -48,10 +48,8 @@
     		</div>
   		<?php } ?>
 	</div>
-	<div id="topBar">
 
-	</div>
-
+	
 
 	<div class="addNew">
 		<img src="../images/addNewButton.svg" id="addNewButton" onclick="addNewTask()"></img>
@@ -61,13 +59,11 @@
 			<input type="text" id="categoryNewList">
 			<button onclick="addListToDatabase(titleNewList.value, dataNewList.value, categoryNewList.value)"></button>
 			<a class="close" onclick="clearPopup()" href="#">&times;</a>
-
 		</div>
 	</div>
 
 	<div id="sidebar">
 		<h1 id = "sidebarTitle">List Checkers</h1>
-
 		<div id="mainTasksTabs">
 			<h2>Main Tasks</h2>
 			<input id="tabToday" type="radio" name="timeTab" checked>
@@ -95,11 +91,34 @@
 		</div>
 	</div>
 
-	<div class="editProfile">
-		<form action="editProfile.php">
-			<input type="submit" value="Edit Profile" />
-		</form>
+	<div id="topBar">
+			<img src="../images/settings.svg" id="settingSvg" onclick="editProfile()"></img>
 	</div>
 
+
+	<div id="editProfile">
+		<div class="editPassword">
+			<form action="action_edit_profile.php" method="post">
+		   		<label>Old Passowrd :
+		   		  <input type = "text" name="oldPassword" placeholder="Current 	password" value="" required="required"><br>
+		   		</label>
+		   		<label>New Password :
+		     			<input type = "text" name="newPassword" placeholder="New password" value="" required="required"><br>
+		   		</label>
+		   		<input type = "submit" value = "Submit">
+			</form>
+		</div>
+
+		<div class="editUsername">
+			<form action="action_edit_username.php" method="post" enctype="	multipart/form-data">
+		   		<label>New Username :
+		   			<input type="text" name="newName">
+		  		</label>
+		   		<input type = "submit" value = "Submit">
+			</form>
+		</div>
+
+		<a class="close" onclick="clearEditProfilePopup()" href="#">&times;</a>
+	</div>
 </body>
 </html>

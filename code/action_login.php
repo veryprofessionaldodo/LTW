@@ -12,6 +12,7 @@
 
     $tasks = getListsByDate($_POST['Email']);
     $items = getItemsByDate($_POST['Email']);
+
     include ('main_page.php');
 
   } else {

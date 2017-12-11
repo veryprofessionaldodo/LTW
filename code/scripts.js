@@ -13,29 +13,6 @@ async function selectFunctionList(id) {
 
 	article.remove();
 
-	//get the input value
-    /*$.ajax({
-        //the url to send the data to
-        url: "modules/tca/updatedb.php",
-        //the data to send to
-        data: {id : $id, lang: $lang},
-        //type. for eg: GET, POST
-        type: "POST",
-        //on success
-        success: function(data){
-            console.log("***********Success***************"); //You can remove here
-            console.log(data); //You can remove here
-        },
-        //on error
-        error: function(){
-            console.log("***********Error***************"); //You can remove here
-            console.log(data); //You can remove here
-        }
-       
-	/*global $dbh;
-    $stmt = $dbh->prepare("DELETE FROM list WHERE Id = id");
-	$stmt->execute();
-  	return $stmt->fetchAll(); */
 }
 
 async function selectFunctionItem(id) {
@@ -71,6 +48,16 @@ function addNewItem() {
 
 function clearPopupItem() {
     var popup = document.getElementById("popupItem");
+    popup.style.visibility="hidden";   
+}
+
+function editProfile() {
+    var popup = document.getElementById("editProfile");
+    popup.style.visibility="visible";
+}
+
+function clearEditProfilePopup() {
+    var popup = document.getElementById("editProfile");
     popup.style.visibility="hidden";   
 }
 
