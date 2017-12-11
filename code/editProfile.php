@@ -13,7 +13,7 @@
       <input type = "text" name="oldPassword" placeholder="Current password" value="" required="required"><br>
     </label>
     <label>New Password :
-      <input type = "text" name="newPAssword" placeholder="New password" value="" required="required"><br>
+      <input type = "text" name="newPassword" placeholder="New password" value="" required="required"><br>
     </label>
       <input type = "submit" value = "Submit">
   </form>

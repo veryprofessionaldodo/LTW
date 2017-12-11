@@ -11,7 +11,7 @@ include_once('../database/connection.php');
 function updatePassword($email,$newPassword){
   global $dbh;
   $stmt = $dbh->prepare('UPDATE user SET Password = ? WHERE Email = ?');
-  $stmt->execute(array($newPassword,$email));
+  $stmt->execute(array(sha1($newPassword),$email));
   return $stmt->fetch() !== false;
 }
 
