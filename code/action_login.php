@@ -16,10 +16,7 @@
 
   } else {
     $_SESSION['error_messages'][] = "Login Failed!";
-    echo $_POST['Email'];
-    echo $_POST['Password'];
-    //$tasks = getListsByDate();
-    //include ('main_page.php');
+    header("Refresh:0,url=../index.php");
   }
 
 ?>
