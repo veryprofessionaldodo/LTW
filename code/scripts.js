@@ -110,3 +110,7 @@ function addItemToDatabase(id, date, content) {
     var popup = document.getElementById("popup");
     popup.style.visibility="hidden";
 }
+
+function logout() {
+    // Ele entra aqui, tenho a certeza
+}

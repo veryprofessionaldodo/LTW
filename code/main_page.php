@@ -24,12 +24,10 @@
 						<input type="text" id="contentNewItem">
 						<label for="submitItem"> Submit </label>
 						<button id="submitItem" onclick="addItemToDatabase(<?=$task['Id']?>, dataNewItem.value, contentNewItem.value)"></button>
-
 						<img src="../images/close.png" id="closeNewItemImage"  onclick="clearPopupItem()"></img>
 					</div>
 				</div>
 				<input id="taskTabButton" type="radio" name="taskTabSelect" onclick="selectFunctionList(<?=$task['Id']?>)"></input>
-
       			<ol>
 	      			<?php
 		      			global $dbh;
@@ -92,6 +90,7 @@
 
 	<div id="topBar">
 			<img src="../images/settings.svg" id="settingSvg" onclick="editProfile()"></img>
+			<img src="../images/logout.png" id="logoutIcon" onclick="logout()"></img>
 	</div>
 
 	<div id="editProfile">
