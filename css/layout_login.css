@@ -71,7 +71,7 @@ input:checked + label {
     display: block;
 }
 
-input[type=text] {
+input[type=text], input[type=email], input[type=password] {
 	background-color: #298a54;
    	width: 500px;
     padding: 12px 20px;
@@ -100,13 +100,13 @@ input[type=submit] {
     transition: 0.3s;
 }
 
-input[type=text]:hover {
+input[type=text]:hover, input[type=email]:hover, input[type=password]:hover {
 	border: 2px solid #d1f7e1;
 	background-color: #216840;
     color: #dbefe4;
 }
 
-input[type=text]:focus {
+input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
 	border: 2px solid #e3fced;
 	background-color: #184f30;
 	box-shadow: 0 0px 8px 4px rgba(0, 0, 0, 0.05), 0 0px 30px 2px rgba(0, 0, 0, 0.05);
