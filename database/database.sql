@@ -48,7 +48,7 @@ insert into list (Id, Title, Data, Category, Email) values (4, "Ver se isto de f
 insert into list (Id, Title, Data, Category, Email) values (5, "Tentar nao chorar por isto estar feio ", "2017-10-10", "LTW", "rogmatias7@gmail.com");
 insert into list (Id, Title, Data, Category, Email) values (6, "Espera ai, rcom é para a semana?", "2017-10-10", "LTW", "rogmatias7@gmail.com");
 insert into list (Id, Title, Data, Category, Email) values (7, "Acho que vou pedir um descanso ao reitor", "2017-10-10", "LTW", "rogmatias7@gmail.com");
-insert into list (Id, Title, Data, Category, Email) values (8, "Quero dormir pls", "2017-10-10", "LTW", "rogmatias7@gmail.com");  
+insert into list (Id, Title, Data, Category, Email) values (8, "Quero dormir pls", "2017-10-10", "LTW", "rogmatias7@gmail.com");
 insert into list (Id, Title, Data, Category, Email) values (9, "Raposa do artico, escuto", "2017-10-10", "LTW", "rogmatias7@gmail.com");
 insert into list (Id, Title, Data, Category, Email) values (10, "Apetece me partir um Linux", "2017-10-10", "LTW", "rogmatias7@gmail.com");
 
@@ -56,4 +56,3 @@ insert into items (ItemId, IdList, Content, Data, Completed) values (1,1, "Ler i
 insert into items (ItemId, IdList, Content, Data, Completed) values (2,1, "Remover itens dentro de listas","2017-10-10",0);
 insert into items (ItemId, IdList, Content, Data, Completed) values (3,2, "Lol, não vou nada","2017-10-10",0);
 insert into items (ItemId, IdList, Content, Data, Completed) values (4,3, "Get those aerial tricks fam","2017-10-10",0);
-

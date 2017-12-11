@@ -8,21 +8,19 @@
     return $stmt->fetchAll();
   }
 
-  function getListsByDate(){
+  function getListsByDate($email){
     global $dbh;
     $stmt = $dbh->prepare("SELECT *
-      FROM list WHERE data<=date()
+      FROM list WHERE data<=date() AND Email = ?
       ORDER BY Id ");
-    $stmt->execute();
+    $stmt->execute(array($email));
     return $stmt->fetchAll();
   }
 
-  function getItemsByDate(){
+  function getItemsByDate($email){
     global $dbh;
-    $stmt = $dbh->prepare("SELECT *
-      FROM items WHERE data<=date()
-      ORDER BY ItemId ");
-    $stmt->execute();
+    $stmt = $dbh->prepare("Select Content, items.Data, Completed From items inner join list on items.ItemId=list.Id WHERE Email = ?");
+    $stmt->execute(array($email));
     return $stmt->fetchAll();
   }
 
