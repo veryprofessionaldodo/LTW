@@ -80,7 +80,7 @@ function editProfile() {
 
 function clearEditProfilePopup() {
     var popup = document.getElementById("editProfile");
-    popup.style.visibility="hidden";   
+    popup.style.visibility="hidden";
 }
 
 function sleep(ms) {
@@ -92,7 +92,7 @@ function addListToDatabase(title, date, category) {
     popup.style.visibility="hidden";
 
         var request = new XMLHttpRequest();
-        request.addEventListener('load', working);
+        //request.addEventListener('load', working);
         request.open('POST', 'add_list.php', true);
         request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         request.send(encodeForAjax({title:title,date:date,category:category}));
@@ -113,5 +113,11 @@ function addItemToDatabase(id, date, content) {
 }
 
 function logout() {
-    // Ele entra aqui, tenho a certeza
+
+	var request = new XMLHttpRequest();
+	//request.addEventListener('load', working);
+	request.open('POST', 'action_logout.php', true);
+	request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	request.send();
+	window.location.href = '../index.php';
 }
