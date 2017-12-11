@@ -11,7 +11,7 @@
   function getListsByDate(){
     global $dbh;
     $stmt = $dbh->prepare("SELECT *
-      FROM list WHERE data<=date() 
+      FROM list WHERE data<=date()
       ORDER BY Id ");
     $stmt->execute();
     return $stmt->fetchAll();
@@ -20,8 +20,8 @@
   function getItemsByDate(){
     global $dbh;
     $stmt = $dbh->prepare("SELECT *
-      FROM items WHERE data<=date() 
-      ORDER BY Id ");
+      FROM items WHERE data<=date()
+      ORDER BY ItemId ");
     $stmt->execute();
     return $stmt->fetchAll();
   }
@@ -30,7 +30,7 @@
    global $dbh;
     $stmt = $dbh->prepare("DELETE FROM list WHERE Id = $id");
     $stmt->execute();
-    return $stmt->fetchAll(); 
+    return $stmt->fetchAll();
   }
 
 ?>

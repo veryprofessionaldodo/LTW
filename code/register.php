@@ -1,18 +1,30 @@
 <?php
-  //$db = new PDO('sqlite:users.db');
-  //$stmt = $db->prepare('INSERT INTO user (username, email, password) VALUES (?, ?, ?)');
-  //$stmt->execute(array($Name, $Email, $Password));
-  //echo $_POST["name"];
-  //echo $_POST["Email"];
-  //echo $_POST["Password"];
 	include_once('../database/connection.php');
-  register($_POST['Name'],$_POST['Email'],$_POST['Password']);
+
+session_start();
+
+	If(register($_POST['Name'],$_POST['Email'],$_POST['Password'])){
+		$_SESSION['success_messages'][] = "Login Successful!";
+		include_once('../database/list.php');
+		$tasks = getListsByDate();
+		$items = getItemsByDate();
+		include ('main_page.php');
+	}
 
   function register($name,$email,$password){
+		try{
     global $dbh;
     $hashed = password_hash($password, PASSWORD_DEFAULT);
-  	$stmt = $dbh->prepare('INSERT INTO user (Name,Email,Password) VALUES (?,?,?)');
-  	$stmt->execute(array($name, $email, $hashed));
+  	$stmt = $dbh->prepare('INSERT INTO user (Name,Email,Password) VALUES (:name,:email,:password)');
+		$stmt->bindParam(":name",$name);
+		$stmt->bindParam(":email",$email);
+		$stmt->bindParam(":password",$hashed);
+  	$stmt->execute();
+	}
+	catch(PDOException $e){
+		return false;
+	}
+		return true;
   }
 
 
