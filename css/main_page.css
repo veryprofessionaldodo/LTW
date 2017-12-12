@@ -46,14 +46,13 @@ body {
   border-bottom-color: #19261F;
 }
 
-
-#mainTasksTabs > input, #projectsTabs > input {
+#mainTasksTabs > button, #projectsTabs > button {
   display: none;
 }
 
 #mainTasksTabs > h2, #projectsTabs > h2 {
   font-weight: lighter;
-  text-align: center; 
+  text-align: center;
 
   border-width: 2px 0px 2px 0px;
   border-top-color: #649382;
@@ -92,11 +91,34 @@ body {
   grid-row-start: start;
   grid-row-end: search_bar;
 
+  height: 50px;
+
   border-width: 0px 0px 3px 0px;
   border-color: #19261D;
   border-style: solid;
 
   background-color: #264635;
+}
+
+#editProfile {
+    padding: 2rem;
+    padding-top: 1rem;
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    bottom: 40%;
+    left: 20%;
+    background-color: #29382c;
+
+    display: grid;
+
+    border-width: 2px 2px 2px 2px;
+    border-color: #dce5de;
+    border-style: solid;
+}
+
+#editPassword > form, #editUsername > form {
+  display: block;
 }
 
 #mainArea {
@@ -106,7 +128,7 @@ body {
 
 .task {
   display: grid;
-  grid-template-columns: [start_main] 20fr [add_button] 0.1fr [delete_button] 0.1fr [radio_button] 2fr [end_main];
+  grid-template-columns: [start_main] 20fr [add_button] 0.1fr [delete_button] 0.1fr [radio_button] 1fr [end_main];
   overflow: hidden;
 
   grid-column-start: start_main;
@@ -123,7 +145,7 @@ body {
 }
 
 .task > h2{
-
+  padding-bottom: 0;
   padding-left: 2rem;
   grid-column-start: start_main;
   grid-column-end: add_button;
@@ -147,7 +169,10 @@ body {
 }
 
 #addNewItemImage {
+  margin-top: auto;
+  margin-bottom: auto;
   width: 40px;
+  height: 40px;
   grid-column-start: add_button;
   grid-column-end: delete_button;
 }
@@ -205,8 +230,11 @@ ol {
   text-align: left;
 }
 
-#itemTabButton {
-
+#itemTabButton, #taskTabButton {
+  padding-right: 0;
+  margin-right: 0;
+  margin-top: auto;
+  margin-bottom: auto;
   grid-column-start: radio_button;
   grid-column-end: end_main;
 }
@@ -216,13 +244,6 @@ ol {
 }
 
 
-#editProfile {
-  visibility: hidden;
-  position: absolute;
-  
-  z-index: 1;
-  background-color: #333;
-}
 
 
 #settingSvg {
@@ -236,7 +257,7 @@ ol {
   width: 20px;
   position: absolute;
   top: 15px;
-  right: 55px; 
+  right: 55px;
 }
 
 /* The actual popup */
@@ -249,15 +270,15 @@ ol {
     bottom: 30%;
     left: 50%;
     background-color: #29382c;
-  
+
     display: grid;
-    
+
     border-width: 2px 2px 2px 2px;
     border-color: #dce5de;
     border-style: solid;
 }
 
-#popup > label, #popupItem > label {
+#popup > label, #popupItem > label, form > label {
   padding: 0.5rem;
   font-family: sans-serif;
   color: #cce5d1;
@@ -270,11 +291,11 @@ ol {
   margin: auto;
 }
 
-#closeNewListImage, #closeNewItemImage {
+#closeNewListImage, #closeNewItemImage, #closeEditImage {
   position: absolute;
-  top: 5%;
-  right: 5%;
-  width: 5%;
+  top: 15px;
+  right: 15px;
+  width: 13px;
 }
 
 /* Container */
@@ -282,7 +303,7 @@ ol {
   width: 70px;
   position: absolute;
   right: 5%;
-  bottom: 7%;  
+  bottom: 7%;
 }
 
 

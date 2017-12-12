@@ -72,18 +72,21 @@
 		<div id="mainTasksTabs">
 			<h2>Main Tasks</h2>
 			<!--<input id="tabToday" type="radio" name="timeTab" checked>-->
-			<button type="button" name="tabToday">- For Today</button>
+			<label for="buttonSideBar1">- For Today</label>
+			<button type="button" name="tabToday" id="buttonSideBar1">- For Today</button>
 
 			<!--<input id="tabWeek" type="radio" name="timeTab">-->
-			<button type="button" name="tabWeek">- For Week</button>
+			<label for="buttonSideBar2">- For Week</label>
+			<button type="button" name="tabWeek" id="buttonSideBar2">- For Week</button>
 
 			<!--<input id="tabAll" type="radio" name="timeTab">-->
-			<button type="button" name="tabAll">- All Time</button>
+			<label for="buttonSideBar2">- All Time</label>
+			<button type="button" name="tabAll" id="buttonSideBar3"></button>
 		</div>
 		<div id="projectsTabs">
 			<h2>Projects</h2>
-			<input id="addNew" type="radio" name="projectTab">
 			<label for="addNew">- Add New</label>
+			<button id="addNew" type="radio" name="projectTab">
 		</div>
 	</div>
 
@@ -93,29 +96,28 @@
 			<img src="../images/logout.png" id="logoutIcon" onclick="logout()"></img>
 	</div>
 
-	<div id="editProfile">
-		<div class="editPassword">
-			<form action="action_edit_profile.php" method="post">
-		   		<label>Old Passowrd :
-		   		  <input type = "text" name="oldPassword" placeholder="Current 	password" value="" required="required"><br>
-		   		</label>
-		   		<label>New Password :
-		     			<input type = "text" name="newPassword" placeholder="New password" value="" required="required"><br>
-		   		</label>
-		   		<input type = "submit" value = "Submit">
-			</form>
-		</div>
 
-		<div class="editUsername">
-			<form action="action_edit_username.php" method="post" enctype="	multipart/form-data">
-		   		<label>New Username :
-		   			<input type="text" name="newName">
-		  		</label>
-		   		<input type = "submit" value = "Submit">
-			</form>
-		</div>
+		<div id="editProfile">
+			<div class="editPassword">
+				<form action="action_edit_profile.php" method="post">
+			   		<label for="oldPasswordId">Old Password</label>
+			   		  <input type = "text" name="oldPassword" id="oldPasswordId" value="" required="required">
+			   		<label for="newPasswordId">New Password</label>
+			     	<input type = "text" name="newPassword" id="newPasswordId" value="" required="required">
+			   		<label for="editSubmitId">New Password</label>
+			   		<input type = "submit" value = "Submit">
+				</form>
+			</div>
 
-		<a class="close" onclick="clearEditProfilePopup()" href="#">&times;</a>
-	</div>
+			<div class="editUsername">
+				<form action="action_edit_username.php" method="post" enctype="	multipart/form-data">
+					<label for="oldPasswordId">New Username</label>
+			   		<input type="text" name="newName" id="newNameId">
+			   		<input type = "submit" value = "Submit">
+				</form>
+			</div>
+
+			<img src="../images/close.png" id="closeEditImage" onclick="clearEditProfilePopup()"></img>
+		</div>
 </body>
 </html>
