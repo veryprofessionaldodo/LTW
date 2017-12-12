@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="../css/main_page.css" rel="stylesheet">
-	<script src="scripts.js" async></script>
+	<script src="scripts.js" defer></script>
 </head>
 <body>
 	<div id="mainArea">
@@ -71,14 +71,14 @@
 		<h1 id = "sidebarTitle">List Checkers</h1>
 		<div id="mainTasksTabs">
 			<h2>Main Tasks</h2>
-			<input id="tabToday" type="radio" name="timeTab" checked>
-			<label for="tabToday">- For Today</label>
+			<!--<input id="tabToday" type="radio" name="timeTab" checked>-->
+			<button type="button" name="tabToday">- For Today</button>
 
-			<input id="tabWeek" type="radio" name="timeTab">
-			<label for="tabWeek">- For Week</label>
+			<!--<input id="tabWeek" type="radio" name="timeTab">-->
+			<button type="button" name="tabWeek">- For Week</button>
 
-			<input id="tabAll" type="radio" name="timeTab">
-			<label for="tabAll">- All Time</label>
+			<!--<input id="tabAll" type="radio" name="timeTab">-->
+			<button type="button" name="tabAll">- All Time</button>
 		</div>
 		<div id="projectsTabs">
 			<h2>Projects</h2>
