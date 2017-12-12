@@ -23,7 +23,7 @@
 						<label for="contentNewItem"> Title </label>
 						<input type="text" id="contentNewItem">
 						<label for="submitItem"> Submit </label>
-						<button id="submitItem" onclick="addItemToDatabase(<?=$task['Id']?>, dataNewItem.value, contentNewItem.value)"></button>
+						<button id="submitItem" onclick="addItemToDatabase(<?=$task['Id']?>)"></button>
 						<img src="../images/close.png" id="closeNewItemImage"  onclick="clearPopupItem()"></img>
 					</div>
 				</div>
@@ -50,7 +50,7 @@
   		<?php } ?>
 	</div>
 
-	
+
 
 	<div class="addNew">
 		<img src="../images/addNewButton.svg" id="addNewButton" onclick="addNewTask()"></img>

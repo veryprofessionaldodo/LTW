@@ -10,12 +10,10 @@ $id = $_POST['id'];
 $date = $_POST['date'];
 $content = $_POST['content'];
 
-echo $id . "   " . $date . "   " . $content;
-
 try{
 
 global $dbh;
-$stmt = $dbh->prepare('INSERT INTO items (IdList, Content, Data, Completed) values (:id, :data, :content, 0)');
+$stmt = $dbh->prepare('INSERT INTO items (IdList, Content, Data, Completed) values (:id, :content,:data, 0)');
 $stmt->bindParam(":id",$id);
 $stmt->bindParam(":data",$date);
 $stmt->bindParam(":content",$content);

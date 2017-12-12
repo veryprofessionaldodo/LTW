@@ -16,7 +16,7 @@ async function selectFunctionList(id) {
 
 	let request = new XMLHttpRequest();
 	//request.addEventListener('load', working);
-	request.open('POST', 'list.php', true);
+	request.open('POST', 'delete_list.php', true);
 	request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 	request.send(encodeForAjax({id:id}));
 
@@ -101,12 +101,16 @@ function addListToDatabase(title, date, category) {
 
 }
 
-function addItemToDatabase(id, date, content) {
+function addItemToDatabase(id) {
     let popup = document.getElementById("popupItem");
+
+		let date = document.getElementById("dataNewItem").value;
+		let content = document.getElementById("contentNewItem").value;
+
     popup.style.visibility="hidden";
 
     let request = new XMLHttpRequest();
-    request.addEventListener('load', working);
+    //request.addEventListener('load', working);
     request.open('POST', 'add_item.php', true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     request.send(encodeForAjax({id:id,date:date,content:content}));
